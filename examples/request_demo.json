@@ -1,0 +1,35 @@
+{
+  "batch_no": "B2026-0913-01",
+  "furnace_id": "F-07",
+  "recipe_id": "REC-42CrMo",
+  "recipe_version": "R-A",
+  "rule_version": "1.1.0",
+  "zones": [
+    {"zone_id": "Z1", "sensor_ids": ["Z1-TC1", "Z1-TC2"]}
+  ],
+  "stages": [
+    {"stage_id": "S1", "name": "升温", "kind": "heat",
+     "start": "2026-09-13T08:00:00Z", "end": "2026-09-13T08:30:00Z",
+     "max_heat_rate_c_min": 30},
+    {"stage_id": "S2", "name": "保温", "kind": "soak",
+     "start": "2026-09-13T08:30:00Z", "end": "2026-09-13T09:00:00Z",
+     "target_low_c": 880, "target_high_c": 920,
+     "max_heat_rate_c_min": 30, "max_cool_rate_c_min": 30,
+     "min_soak_seconds": 1500},
+    {"stage_id": "S3", "name": "降温", "kind": "cool",
+     "start": "2026-09-13T09:00:00Z", "end": "2026-09-13T09:30:00Z",
+     "max_cool_rate_c_min": 200}
+  ],
+  "readings": [
+    {"t": "2026-09-13T08:58:00Z", "sensor_id": "Z1-TC1", "value": 900.0, "unit": "c"},
+    {"t": "2026-09-13T08:59:00Z", "sensor_id": "Z1-TC1", "value": 950.0, "unit": "c"},
+    {"t": "2026-09-13T09:00:00Z", "sensor_id": "Z1-TC1", "value": 900.0, "unit": "c"},
+    {"t": "2026-09-13T08:58:00Z", "sensor_id": "Z1-TC2", "value": 1652.0, "unit": "f"},
+    {"t": "2026-09-13T08:59:00Z", "sensor_id": "Z1-TC2", "value": 1652.0, "unit": "f"},
+    {"t": "2026-09-13T09:00:00Z", "sensor_id": "Z1-TC2", "value": 1652.0, "unit": "f"}
+  ],
+  "max_heat_rate_c_min": 30,
+  "max_cool_rate_c_min": 200,
+  "max_overshoot_c": 10,
+  "sensor_tolerance_c": 3
+}
